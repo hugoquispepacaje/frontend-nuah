@@ -2,7 +2,7 @@ import { useReducer, useMemo } from 'react';
 import ShoppingCartContext, { initialState } from './ShoppingCartContext';
 import { ShoppingCartReducer } from './ShoppingCartReducer';
 import { ADD_ITEM, UPDATE_ITEM, REMOVE_ITEM, CLEAR_CART, defaultCart } from '../utils';
-import { ShoppingCartState, ShoppingCartStateProps } from './props';
+import { ShoppingCartStateProps } from './props';
 import ItemOrder from '../../models/ItemOrder';
 
 const ShoppingCartState = (props:ShoppingCartStateProps) => {

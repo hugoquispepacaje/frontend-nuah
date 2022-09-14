@@ -3,7 +3,8 @@ const headerButtonContainerStyle = {
   display: 'flex',
   width: '100%',
   justifyContent: 'center',
-  gap: '1rem'
+  gap: '1rem',
+  flexWrap: 'wrap' as 'wrap',
 };
 const linkStyle = {
   textDecoration: 'none'

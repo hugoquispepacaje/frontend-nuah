@@ -1,8 +1,7 @@
-interface ProductCardProps {
-  title: string;
-  price: number;
-  images: string[];
-  hasStock: boolean;
+import Item from "../../models/Item";
 
+interface ProductCardProps {
+  item: Item;
+  showModalItem: (item:Item) => void;
 }
 export default ProductCardProps;

@@ -14,8 +14,5 @@ const titleStyle = {
 const stockStyle = {
   marginBottom: '0.5rem',
 };
-const dropdownStyle = {
-  marginRight: '0.5rem',
-};
 
-export { productCardStyle, imageStyle, titleStyle, stockStyle, dropdownStyle };
+export { productCardStyle, imageStyle, titleStyle, stockStyle };

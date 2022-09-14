@@ -14,6 +14,13 @@ const HeaderButtons:HeaderButton[] = [
     hasIcon: true,
     icon: 'pi pi-shopping-cart',
   },
+  {
+    id: 3,
+    title: 'My Orders',
+    url: '/orders',
+    hasIcon: true,
+    icon: 'pi pi-shopping-bag',
+  },
 ];
 
 export default HeaderButtons;

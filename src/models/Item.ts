@@ -9,4 +9,15 @@ interface Item {
   image: string[];
 };
 
+export const itemDefault:Item = {
+  _id: '',
+  name: '',
+  type: '',
+  color: '',
+  size: '',
+  price: 0,
+  stock: 0,
+  image: [],
+};
+
 export default Item;

@@ -1,11 +1,20 @@
 import { useEffect, useState } from "react";
-import Item from "../../models/Item";
+import Item, { itemDefault } from "../../models/Item";
 import { getItems } from "../../services/items";
 import ProductCard from '../../components/productCard/ProductCard';
 import { productsContainer } from "./style";
+import ModalItem from "../../components/modalItem/ModalItem";
 
 const Products = () => {
   const [ products, setProducts ] = useState<Item[]>([]);
+  const [ isModalVisible, setIsModalVisible ] = useState(false);
+  const [ itemModal, setItemModal ] = useState<Item>(itemDefault);
+
+  const showModalItem = (item:Item) => {
+    setIsModalVisible(true);
+    setItemModal(item);
+  };
+
   useEffect(() => {
     getItems
       .then(
@@ -24,10 +33,8 @@ const Products = () => {
     (product:Item) => (
       <ProductCard
         key={product._id}
-        title={product.name}
-        images={product.image}
-        hasStock={product.stock > 1}
-        price={product.price}
+        item={product}
+        showModalItem={showModalItem}
       />
     )
   );
@@ -36,6 +43,11 @@ const Products = () => {
       <div style={productsContainer}>
         {productCards}
       </div>
+      <ModalItem
+        isVisible={isModalVisible}
+        setIsVisible={setIsModalVisible}
+        item={itemModal}
+      />
     </>
   )
 };
