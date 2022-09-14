@@ -1,4 +1,4 @@
-const modalItemStyle = {
+const productDetailStyle = {
   display: 'flex',
   flexDirection: 'col',
   justifyContent: 'center',
@@ -21,4 +21,4 @@ const imageStyle = {
   height: '10rem',
 };
 
-export { modalItemStyle, imageStyle, detailItemStyle, quantityStyle };
+export { productDetailStyle, imageStyle, detailItemStyle, quantityStyle };

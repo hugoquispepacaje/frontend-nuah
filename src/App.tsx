@@ -8,6 +8,7 @@ import Header from "./components/header/Header";
 import './App.css'
 import Products from "./features/products/Products";
 import Cart from "./features/cart/Cart";
+import Orders from "./features/orders/Orders";
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Products />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/orders" element={<Products />} />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
         </Router>
       </ShoppingCartState>

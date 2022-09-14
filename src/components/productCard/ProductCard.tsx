@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Card } from 'primereact/card';
 import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button';

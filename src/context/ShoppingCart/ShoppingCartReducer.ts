@@ -10,7 +10,7 @@ const saveInStorage = (cart:Order) => {
 
 export const sumItems = (items:ItemOrder[]) => {
   const totalQuantity = items.reduce((total, product) => total + product.quantity, 0);
-  const totalAmount = items.reduce((total, product) => total + product.amount * product.quantity, 0);
+  const totalAmount = items.reduce((total, product) => total + product.amount, 0);
   const cart = {
     items,
     totalQuantity,

@@ -3,8 +3,8 @@ import ShoppingCartContext from '../../context/ShoppingCart/ShoppingCartContext'
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import ModalItemProps from './props';
-import { imageStyle, modalItemStyle, detailItemStyle, quantityStyle } from './style';
 import ItemOrder from '../../models/ItemOrder';
+import ProductDetail from '../productDetail/ProductDetail';
 
 const ModalItem = (props:ModalItemProps) => {
   const [ quantity, setQuantity ] = useState(1);
@@ -74,30 +74,13 @@ const ModalItem = (props:ModalItemProps) => {
   }
   return (
     <Dialog header="Add to Cart" visible={props.isVisible} style={{ width: '90vw' }} footer={renderFooter()} onHide={() => onHide()}>
-      <div style={modalItemStyle as React.CSSProperties}>
-        <img
-          src={props.item.image.length>0? props.item.image[0]:''}
-          style={imageStyle}
-        />
-        <div style={detailItemStyle as React.CSSProperties}>
-          <p style={{fontWeight: 'bold'}}>{props.item.name}</p>
-          <p>{props.item.type}</p>
-          <p>{props.item.size}</p>
-        </div>
-        <div style={detailItemStyle as React.CSSProperties}>
-          <p style={{fontWeight: 'bold'}}>Each</p>
-          <p>${props.item.price}</p>
-        </div>
-        <div style={quantityStyle as React.CSSProperties}>
-          <Button label="-" className="p-button-sm" onClick={()=>minusQuantity()}/>
-          <p>{quantity}</p>
-          <Button label="+" className="p-button-sm" onClick={()=>plusQuantity()}/>
-        </div>
-        <div style={detailItemStyle as React.CSSProperties}>
-          <p style={{fontWeight: 'bold'}}>Total</p>
-          <p>${total}</p>
-        </div>
-      </div>
+      <ProductDetail
+        item={props.item}
+        minusQuantity={minusQuantity}
+        plusQuantity={plusQuantity}
+        quantity={quantity}
+        total={total}
+      />
     </Dialog>
   );
 }

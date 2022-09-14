@@ -16,7 +16,7 @@ const Products = () => {
   };
 
   useEffect(() => {
-    getItems
+    getItems()
       .then(
         (response) => {
           setProducts(response.data.items);
