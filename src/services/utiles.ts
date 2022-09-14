@@ -1,3 +1,3 @@
-const urlBackend:string = 'http://nuah-test-back.herokuapp.com/nuah/';
+const urlBackend:string = 'https://nuah-test-back.herokuapp.com/nuah/';
 
 export { urlBackend };
