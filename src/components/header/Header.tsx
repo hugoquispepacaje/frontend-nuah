@@ -1,5 +1,5 @@
 import { headerStyle, headerTitleStyle } from './style';
-import HeaderButtons from '../headerButtons/headerButtons';
+import HeaderButtons from '../headerButtons/HeaderButtons';
 
 const Header = () => (
   <header style={headerStyle} >
